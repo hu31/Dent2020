@@ -1,135 +1,17 @@
 <!DOCTYPE html>
 <html>
 	<meta charset="UTF-8">
+	<script src="js/rotation.js"></script>
 	<head>
 		<link rel="stylesheet" href="styles.css">
 	</head>
 	<body>
 		<h1>牙牙牙</h1>
 		<p>這是文字 </p>
-	</body>
 		<div>
-			<img id='img1'  class="circle" src="img3.png" alt="A circle and a line" draggable='false' onmouseup="mouseup(event)" onmousedown="mousedown(event)" onclick="flip()" ondrag="rotator()" onmousemove="mouseover(event)" onsubmit='null' currentX='0' currentY='0' currentdegree='0'>
-			<img id='img2' class="circle" src="img4.png" alt="An inner circle" onmousemove="mouseover(event)" onclick="flip()" currentX='0' currentY='0' currentdegree='0'>
-			<img id='img3' class="circle" src="img2.png" alt="A second circle" onmousemove="mouseover(event)" currentX='0' currentY='0' currentdegree='0' visibility='visible' onclick='flip()'>
+			<img id='img1'  class="circle" src="resources/images/107ver1.png" alt="A circle and a line" draggable='false'  onmousemove="mousemove(event)" onmousedown="mousedown(event)" onmouseup="mouseup(event)" currentX='0' currentY='0' currentdegree='0'>
+			<!--<img id='img2' class="circle" src="resources/images/img5.png" alt="An inner circle" onclick="rotator(event)" onmouseenter="mouseenter(event)" onmouseover="mouseover(event)" currentX='0' currentY='0' currentdegree='0'>-->
+			<img id='img3' class="circle" src="resources/images/107cover_ver1.png" alt="Outer wall" draggable='false' currentX='0' currentY='0' currentdegree='0' visibility='visible' onclick="rotator(event)">
 		</div>
-<script>
-	var x = 0;
-	var previousX = 0;
-	var previousY = 0;
-	var currentX = 0;
-	var currentY = 0;
-	var isVisible = 0;
-	function rotator() {
-		console.log('1');
-		var img = document.getElementById("img1");
-		x = (x + 30) % 360;
-		img.style.transform='rotate(' + x + 'deg)';
-		console.log('3');
-	}
-	function dragger(event) {
-		console.log('2');
-	}
-
-	function mouseup(event) {
-		console.log(event.offsetX + ", " + event.offsetY);
-	}
-
-	function rotate(id, degree) {
-		var img = document.getElementById(id);
-		img.style.transform='rotate(' + degree + 'deg)';
-	}
-
-	function hide() {
-		document.getElementById('img3').style.visibility='hidden';	
-	}
-
-	function flip() {
-		var i1 = document.getElementById('img1');
-		var i2 = document.getElementById('img2');
-		var i3 = document.getElementById('img3');
-		if (isVisible % 2) {
-			i1.style.visibility='visible';
-			i2.style.visibility='hidden';
-			i3.style.visibility='visible';
-		} else {
-			i1.style.visibility='visible';
-			i2.style.visibility='visible';
-			i3.style.visibility='hidden';
-		}
-		isVisible++;
-	}
-	
-	function mouseover(event) {
-		//console.log(event.target);
-		console.log(event.target.id);
-		var id = event.target.id;
-
-		if (id!="img1" && id!="img2" && id!="img3") {
-			return;
-		}
-
-
-		var centerX = 0;
-		var centerY = 0;
-
-		//Determine precisely whether img1 or img2
-		if (id=="img2") {
-			var x = event.offsetX;
-			var y = event.offsetY;
-			if ( ((x-134)*(x-134) + (y-134)*(y-134)) > 134*134) {
-				id = "img1";
-			}
-		} else if (id=="img3") {
-
-			var x = event.offsetX;
-			var y = event.offsetY;
-			if ( ((x-150)*(x-150) + (y-150)*(y-150)) > 150*150) {
-				id = "img1";
-			}
-		}
-
-		if (id=="img1") {
-			centerX = 217;
-			centerY = 217;
-		} else if (id=="img2") {
-			centerX = 134;
-			centerY = 134;
-		} else if (id=="img3") {
-			centerX = 150;
-			centerY = 150;
-		} else {
-			return;
-		}
-
-		var previousX = parseInt(document.getElementById(id).getAttribute("currentX"));
-		var previousY = parseInt(document.getElementById(id).getAttribute("currentY"));
-		var degree = parseInt(document.getElementById(id).getAttribute("currentdegree"));
-		document.getElementById(id).setAttribute("currentX", event.offsetX);
-		document.getElementById(id).setAttribute("currentY", event.offsetY);
-		previousX = previousX - centerX;
-		previousY = previousY - centerY;
-		currentX = event.offsetX - centerX;
-		currentY = event.offsetY - centerY;
-		
-		var diffX = currentX - previousX;
-		var diffY = currentY - previousY;
-
-		var dot_product = (previousX * currentY) - (previousY * currentX) ;
-		var shift = 1;
-		if (dot_product > 0) {
-			degree += shift;
-		} else if (dot_product < 0) {
-			degree -= shift;
-		}
-		degree = degree % 360;
-		rotate(id, degree);
-		document.getElementById(id).setAttribute("currentdegree", degree);
-	}
-
-	function mousedown(event) {
-		var img = document.getElementById("img1");
-		console.log(event.offsetX + ", " + event.offsetY);
-	}
-</script>
+	</body>
 </html>
