@@ -1,3 +1,7 @@
+document.getElementById("img3").addEventListener('touchstart', function(e) {
+	e.preventDefault();
+}
+
 function mouseup(event) {
 	var id = event.target.id;
 	document.getElementById(id).removeAttribute("enterX");
@@ -123,4 +127,8 @@ function color(event) {
 
 function color2(event) {
 	document.getElementById("p1").textContent="這是文字";
+}
+
+function loadContent(event) {
+	document.getElementById("img1").visibility="visible";
 }
