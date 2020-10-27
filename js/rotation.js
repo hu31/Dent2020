@@ -116,3 +116,11 @@ function rotator(event) {
 	rotate('img1',30);
 	
 }
+
+function color(event) {
+	document.getElementById("p1").textContent="Dent";
+}
+
+function color2(event) {
+	document.getElementById("p1").textContent="這是文字";
+}
