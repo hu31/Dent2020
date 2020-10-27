@@ -6,7 +6,7 @@ function p2(event) {
 	var currentDegree = parseInt(document.getElementById("img1").getAttribute("currentdegree"));
 	
 	rotate("img1", currentDegree + 30);
-	document.getElementById("img1").setAttribute("currentdegree", currentDegree);
+	document.getElementById("img1").setAttribute("currentdegree", currentDegree + 30);
 }
 
 function mouseup(event) {
@@ -28,10 +28,12 @@ function mousedown(event) {
 }
 
 function touchstart(event) {
+	log("touch start");
 	var id = event.target.id;
 	document.getElementById(id).setAttribute("enterX", event.touches[0].pageX);
 	document.getElementById(id).setAttribute("enterY", event.touches[0].pageY);
 	log ( event.touches[0].pageX + " " + event.offsetX + " " + event.offsetY);
+	document.getElementById("p2").textContent=event.touches[0].pageX;
 }
 
 function rotate(id, degree) {
