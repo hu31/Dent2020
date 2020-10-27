@@ -12,7 +12,8 @@ function mousedown(event) {
 	var id = event.target.id;
 	document.getElementById(id).setAttribute("enterX", event.offsetX);
 	document.getElementById(id).setAttribute("enterY", event.offsetY);
-	log (event.offsetX + " " + event.offsetY);
+	console.log(event);
+	log ( event.touches[0].pageX + " " + event.offsetX + " " + event.offsetY);
 }
 
 function rotate(id, degree) {
