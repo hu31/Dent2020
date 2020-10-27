@@ -2,6 +2,13 @@ function log(str) {
 	document.getElementById("p1").textContent=str;
 }
 
+function p2(event) {
+	var currentDegree = parseInt(document.getElementById("img1").getAttribute("currentdegree"));
+	
+	rotate("img1", currentDegree + 30);
+	document.getElementById("img1").setAttribute("currentdegree", currentDegree);
+}
+
 function mouseup(event) {
 	var id = event.target.id;
 	document.getElementById(id).removeAttribute("enterX");
