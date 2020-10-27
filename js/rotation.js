@@ -30,10 +30,10 @@ function mousedown(event) {
 function touchstart(event) {
 	log("touch start");
 	var id = event.target.id;
-	document.getElementById(id).setAttribute("enterX", event.touches[0].pageX);
-	document.getElementById(id).setAttribute("enterY", event.touches[0].pageY);
-	log ( event.touches[0].pageX + " " + event.offsetX + " " + event.offsetY);
-	document.getElementById("p2").textContent=event.touches[0].pageX;
+	document.getElementById(id).setAttribute("enterX", event.changedTouches[0].pageX);
+	document.getElementById(id).setAttribute("enterY", event.changedTouches[0].pageY);
+	log ( event.changedTouches[0].pageX + " " + event.offsetX + " " + event.offsetY);
+	document.getElementById("p2").textContent=event.changedTouches[0].pageX;
 }
 
 function rotate(id, degree) {
@@ -99,8 +99,8 @@ function move(id, X, Y) {
 function touchmove(event) {
 	var id = event.target.id;
 	if (move(id, event.offsetX, event.offsetY)) {
-		document.getElementById(id).setAttribute("enterX", event.touches[0].pageX);
-		document.getElementById(id).setAttribute("enterY", event.touches[0].pageY);
+		document.getElementById(id).setAttribute("enterX", event.changedTouches[0].pageX);
+		document.getElementById(id).setAttribute("enterY", event.changedTouches[0].pageY);
 	}
 	
 }
