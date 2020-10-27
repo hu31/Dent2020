@@ -8,11 +8,22 @@ function mouseup(event) {
 	document.getElementById(id).removeAttribute("enterY");
 }
 
+function touchend(event) {
+	var id = event.target.id;
+	document.getElementById(id).removeAttribute("enterX");
+	document.getElementById(id).removeAttribute("enterY");
+}
+
 function mousedown(event) {
 	var id = event.target.id;
 	document.getElementById(id).setAttribute("enterX", event.offsetX);
 	document.getElementById(id).setAttribute("enterY", event.offsetY);
-	console.log(event);
+}
+
+function touchstart(event) {
+	var id = event.target.id;
+	document.getElementById(id).setAttribute("enterX", event.touches[0].pageX);
+	document.getElementById(id).setAttribute("enterY", event.touches[0].pageY);
 	log ( event.touches[0].pageX + " " + event.offsetX + " " + event.offsetY);
 }
 
@@ -34,70 +45,30 @@ function degreesToTurn(x1,y1,x2,y2) {
 	return degree;
 }
 
-function mousemove(event) {
-	var id = event.target.id;
-
-	if (id!="img1" && id!="img2" && id!="img3") {
-		return;
-	}
-
-	//var d = document.getElementById(id).getBoundingClientRect();
-	//console.log(d);
+function move(id, X, Y) {
+	var obj = document.getElementById(id);
 	var tempX = document.getElementById(id).getAttribute("enterX");
 	var tempY = document.getElementById(id).getAttribute("enterY");
 
 	console.log("temp: " + tempX + " " + tempY);
 	if (tempX == null || tempY == null) {
-		return;
+		return false;
 	}
 	var enterX = parseInt(tempX);
 	var enterY = parseInt(tempY);
 
-	console.log("enter: " + enterX + " " + enterY);
 	if (enterX == null || enterY == null) {
-		return;
+		return false;
 	}
 
-	var centerX = 0;
-	var centerY = 0;
-
-	//Determine precisely whether img1 or img2
-	if (id=="img2") {
-		var x = event.offsetX;
-		var y = event.offsetY;
-		if ( ((x-134)*(x-134) + (y-134)*(y-134)) > 134*134) {
-			console.log("it's img1, not 2");
-			id = "img1";
-		}
-	} else if (id=="img3") {
-
-		var x = event.offsetX;
-		var y = event.offsetY;
-		if ( ((x-150)*(x-150) + (y-150)*(y-150)) > 150*150) {
-			id = "img1";
-		}
-	}
-
-	if (id=="img1") {
-		centerX = 256;
-		centerY = 256;
-	} else if (id=="img2") {
-		centerX = 134;
-		centerY = 134;
-	} else if (id=="img3") {
-		centerX = 150;
-		centerY = 150;
-	} else {
-		return;
-	}
-
+	var centerX = 256;
+	var centerY = 256;
 	var currentDegree = parseInt(document.getElementById(id).getAttribute("currentdegree"));
 	
-	console.log("offsets: " + event.offsetX + " " + event.offsetY + " " + centerX + " " + centerY);
 	enterX = enterX - centerX;
 	enterY = enterY - centerY;
-	var currentX = event.offsetX - centerX;
-	var currentY = event.offsetY - centerY;
+	var currentX = X - centerX;
+	var currentY = Y - centerY;
 
 	var dot_product = (enterX * currentY) - (enterY * currentX) ;
 	var degree = degreesToTurn(enterX,enterY,currentX,currentY) || 0;
@@ -107,15 +78,29 @@ function mousemove(event) {
 	degree = (currentDegree + degree) % 360;
 
 	
-	//degree = parseInt(document.getElementById(id).getAttribute("currentdegree"));
-	//degree += 30;
-	console.log("Pre-trun:" + event.offsetX + " " + event.offsetY);
 	rotate(id, degree);
-	console.log("Post-trun:" + event.offsetX + " " + event.offsetY);
 	document.getElementById(id).setAttribute("currentdegree", degree);
-	console.log("degree: " + degree);
-	document.getElementById(id).setAttribute("enterX", event.offsetX);
-	document.getElementById(id).setAttribute("enterY", event.offsetY);
+	//console.log("degree: " + degree);
+	//document.getElementById(id).setAttribute("enterX", event.offsetX);
+	//document.getElementById(id).setAttribute("enterY", event.offsetY);
+	return true;
+}
+
+function touchmove(event) {
+	var id = event.target.id;
+	if (move(id, event.offsetX, event.offsetY)) {
+		document.getElementById(id).setAttribute("enterX", event.touches[0].pageX);
+		document.getElementById(id).setAttribute("enterY", event.touches[0].pageY);
+	}
+	
+}
+
+function mousemove(event) {
+	var id = event.target.id;
+	if (move(id, event.offsetX, event.offsetY)) {
+		document.getElementById(id).setAttribute("enterX", event.offsetX);
+		document.getElementById(id).setAttribute("enterY", event.offsetY);
+	}
 }
 
 function rotator(event) {
