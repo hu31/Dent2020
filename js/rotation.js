@@ -1,3 +1,7 @@
+function log(str) {
+	document.getElementById("p1").textContent=str;
+}
+
 function mouseup(event) {
 	var id = event.target.id;
 	document.getElementById(id).removeAttribute("enterX");
@@ -8,6 +12,7 @@ function mousedown(event) {
 	var id = event.target.id;
 	document.getElementById(id).setAttribute("enterX", event.offsetX);
 	document.getElementById(id).setAttribute("enterY", event.offsetY);
+	log (event.offsetX + " " + event.offsetY);
 }
 
 function rotate(id, degree) {
