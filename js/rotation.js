@@ -60,6 +60,7 @@ function move(id, X, Y) {
 	var tempY = document.getElementById(id).getAttribute("enterY");
 
 	console.log("temp: " + tempX + " " + tempY);
+	console.log(obj.width + " " + obj.height);
 	if (tempX == null || tempY == null) {
 		return false;
 	}
@@ -70,8 +71,8 @@ function move(id, X, Y) {
 		return false;
 	}
 
-	var centerX = 256;
-	var centerY = 256;
+	var centerX = obj.width / 2;
+	var centerY = obj.height / 2;
 	var currentDegree = parseInt(document.getElementById(id).getAttribute("currentdegree"));
 	
 	enterX = enterX - centerX;

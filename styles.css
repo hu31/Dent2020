@@ -5,6 +5,7 @@
 
 body {
 	background-color: #00FFFF;
+	overflow: hidden;
 }
 
 p {
@@ -28,15 +29,16 @@ div {
 }
 
 #img1 {
-	height: 512px;
-	width: 512px;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
 }
 
 
 #img3 {
-	height: 512px;
-	width: 512px;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
 	visibility: visible;
 	pointer-events: none;
-	touch-action: none;
 }
