@@ -1,7 +1,3 @@
-document.getElementById("img3").addEventListener('touchstart', function(e) {
-	e.preventDefault();
-}
-
 function mouseup(event) {
 	var id = event.target.id;
 	document.getElementById(id).removeAttribute("enterX");

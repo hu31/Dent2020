@@ -38,4 +38,5 @@ div {
 	width: 512px;
 	visibility: visible;
 	pointer-events: none;
+	touch-action: none;
 }
