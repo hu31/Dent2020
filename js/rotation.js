@@ -21,6 +21,13 @@ function touchend(event) {
 		return;
 	}
 
+	var x = event.changedTouches[0].pageX;
+	var y = event.changedTouches[0].pageX;
+	if (x < screen.width) {
+		rotateRelative("img1", -30);
+	} else {
+		rotateRelative("img2", 30);
+	}
 	document.getElementById(id).removeAttribute("enterX");
 	document.getElementById(id).removeAttribute("enterY");
 }
@@ -46,6 +53,11 @@ function touchstart(event) {
 function rotate(id, degree) {
 	var img = document.getElementById(id);
 	img.style.transform='rotate(' + degree + 'deg)';
+}
+
+function rotateRelative (id, degree) {
+	var currentDegree = document.getElementById(id).getAttribute('currentDegree');
+	rotate (id, currentDegree+degree);
 }
 
 function degreesToTurn(x1,y1,x2,y2) {
@@ -105,6 +117,7 @@ function move(id, X, Y) {
 }
 
 function touchmove(event) {
+	return;
 	var id = event.target.id;
 	if (id != "img1") {
 		return;
