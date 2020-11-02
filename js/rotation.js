@@ -19,8 +19,8 @@ function mouseup(event) {
 function touchend(event) {
 	log("p3", "Touchend: " + event.changedTouches[0].pageX + ", " + event.changedTouches[0].pageY);
 
-	var rect = document.getElementById("img1").getBoundingClientRect();
-	log("p4", "Rect: " + rect.top + ", " + rect.right + ", " rect.left + ", " + rect.bottom);
+	var b = document.getElementById("img1").getBoundingClientRect();
+	log("p4", "Rect: " + b.top + ", " + b.right + ", " + b.left + ", " + b.bottom);
 	var id = event.target.id;
 	if (id != "img1") {
 		return;
