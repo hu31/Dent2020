@@ -1,5 +1,5 @@
-function log(str) {
-	document.getElementById("p1").textContent=str;
+function log(id, str) {
+	document.getElementById(id).textContent=str;
 }
 
 function p2(event) {
@@ -16,6 +16,7 @@ function mouseup(event) {
 }
 
 function touchend(event) {
+	log("p3", "Touchend: " + event.changedTouches[0].pageX, ", " + event.changedTouches[0].pageY);
 	var id = event.target.id;
 	if (id != "img1") {
 		return;
@@ -39,15 +40,13 @@ function mousedown(event) {
 }
 
 function touchstart(event) {
-	log("touch start");
+	log("p1", "Touchend: " + event.changedTouches[0].pageX, ", " + event.changedTouches[0].pageY);
 	var id = event.target.id;
 	if (id != "img1") {
 		return;
 	}
 	document.getElementById(id).setAttribute("enterX", event.changedTouches[0].pageX);
 	document.getElementById(id).setAttribute("enterY", event.changedTouches[0].pageY);
-	log ( "ID: " + id + "x: " + event.changedTouches[0].pageX + "x: " + event.offsetX + "y: " + event.offsetY);
-	document.getElementById("p2").textContent=event.changedTouches[0].pageX;
 }
 
 function rotate(id, degree) {
@@ -117,6 +116,7 @@ function move(id, X, Y) {
 }
 
 function touchmove(event) {
+	log("p2", "Touchend: " + event.changedTouches[0].pageX, ", " + event.changedTouches[0].pageY);
 	return;
 	var id = event.target.id;
 	if (id != "img1") {
@@ -150,6 +150,7 @@ function color2(event) {
 	document.getElementById("p1").textContent="這是文字";
 }
 
-function loadContent(event) {
+function loadContent() {
+	console.log("Load!");
 	document.getElementById("img1").visibility="visible";
 }
