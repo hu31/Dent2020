@@ -39,7 +39,7 @@ function touchstart(event) {
 	}
 	document.getElementById(id).setAttribute("enterX", event.changedTouches[0].pageX);
 	document.getElementById(id).setAttribute("enterY", event.changedTouches[0].pageY);
-	log ( event.changedTouches[0].pageX + " " + event.offsetX + " " + event.offsetY);
+	log ( "ID: " + id + "x: " + event.changedTouches[0].pageX + "x: " + event.offsetX + "y: " + event.offsetY);
 	document.getElementById("p2").textContent=event.changedTouches[0].pageX;
 }
 
