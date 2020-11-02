@@ -1,3 +1,4 @@
+console.log("load js");
 function log(id, str) {
 	document.getElementById(id).textContent=str;
 }
@@ -17,6 +18,9 @@ function mouseup(event) {
 
 function touchend(event) {
 	log("p3", "Touchend: " + event.changedTouches[0].pageX + ", " + event.changedTouches[0].pageY);
+
+	var rect = document.getElementById("img1").getBoundingClientRect();
+	log("p4", "Rect: " + rect.top + ", " + rect.right + ", " rect.left + ", " + rect.bottom);
 	var id = event.target.id;
 	if (id != "img1") {
 		return;
@@ -79,7 +83,7 @@ function move(id, X, Y) {
 
 	console.log("offset: " + obj.offset);
 	console.log("temp: " + tempX + " " + tempY);
-	console.log(obj.width + " " + obj.height);
+	//console.log(obj.width + " " + obj.height);
 	if (tempX == null || tempY == null) {
 		return false;
 	}
@@ -104,12 +108,15 @@ function move(id, X, Y) {
 	if (dot_product < 0) {
 		degree = degree * -1;
 	}
+	//Only rotate with suffcient degrees
+	if (degree < 1 && degree > -1) {
+		return false;
+	}
+	console.log("degree: " + degree);
 	degree = (currentDegree + degree) % 360;
-
 	
 	rotate(id, degree);
 	document.getElementById(id).setAttribute("currentdegree", degree);
-	//console.log("degree: " + degree);
 	//document.getElementById(id).setAttribute("enterX", event.offsetX);
 	//document.getElementById(id).setAttribute("enterY", event.offsetY);
 	return true;
