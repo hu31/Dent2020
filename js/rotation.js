@@ -16,7 +16,7 @@ function mouseup(event) {
 }
 
 function touchend(event) {
-	log("p3", "Touchend: " + event.changedTouches[0].pageX, ", " + event.changedTouches[0].pageY);
+	log("p3", "Touchend: " + event.changedTouches[0].pageX + ", " + event.changedTouches[0].pageY);
 	var id = event.target.id;
 	if (id != "img1") {
 		return;
@@ -40,7 +40,7 @@ function mousedown(event) {
 }
 
 function touchstart(event) {
-	log("p1", "Touchend: " + event.changedTouches[0].pageX, ", " + event.changedTouches[0].pageY);
+	log("p1", "Touchstart: " + event.changedTouches[0].pageX + ", " + event.changedTouches[0].pageY);
 	var id = event.target.id;
 	if (id != "img1") {
 		return;
@@ -116,7 +116,7 @@ function move(id, X, Y) {
 }
 
 function touchmove(event) {
-	log("p2", "Touchend: " + event.changedTouches[0].pageX, ", " + event.changedTouches[0].pageY);
+	log("p2", "Touchmove: " + event.changedTouches[0].pageX + ", " + event.changedTouches[0].pageY);
 	return;
 	var id = event.target.id;
 	if (id != "img1") {
