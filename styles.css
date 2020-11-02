@@ -3,9 +3,14 @@
 	transform: rotate(20deg);
 }
 
+head {
+	height: 100%;
+}
+
 body {
 	background-color: #00FFFF;
 	overflow: hidden;
+	height: 100%;
 }
 
 p {
@@ -13,7 +18,6 @@ p {
 }
 
 div {
-	position: relative:
 }
 
 .circle {
@@ -29,15 +33,16 @@ div {
 }
 
 #img1 {
-	width: 100%;
-	height: 100%;
+	max-width: 50%;
+	max-height: 50%;
 	object-fit: contain;
+	border-radius: 50%;
 }
 
 
 #img3 {
-	width: 100%;
-	height: 100%;
+	max-width: 50%;
+	max-height: 50%;
 	object-fit: contain;
 	visibility: visible;
 	pointer-events: none;
