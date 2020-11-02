@@ -17,6 +17,10 @@ function mouseup(event) {
 
 function touchend(event) {
 	var id = event.target.id;
+	if (id != "img1") {
+		return;
+	}
+
 	document.getElementById(id).removeAttribute("enterX");
 	document.getElementById(id).removeAttribute("enterY");
 }
@@ -30,6 +34,9 @@ function mousedown(event) {
 function touchstart(event) {
 	log("touch start");
 	var id = event.target.id;
+	if (id != "img1") {
+		return;
+	}
 	document.getElementById(id).setAttribute("enterX", event.changedTouches[0].pageX);
 	document.getElementById(id).setAttribute("enterY", event.changedTouches[0].pageY);
 	log ( event.changedTouches[0].pageX + " " + event.offsetX + " " + event.offsetY);
@@ -59,6 +66,7 @@ function move(id, X, Y) {
 	var tempX = document.getElementById(id).getAttribute("enterX");
 	var tempY = document.getElementById(id).getAttribute("enterY");
 
+	console.log("offset: " + obj.offset);
 	console.log("temp: " + tempX + " " + tempY);
 	console.log(obj.width + " " + obj.height);
 	if (tempX == null || tempY == null) {
@@ -98,6 +106,9 @@ function move(id, X, Y) {
 
 function touchmove(event) {
 	var id = event.target.id;
+	if (id != "img1") {
+		return;
+	}
 	if (move(id, event.offsetX, event.offsetY)) {
 		document.getElementById(id).setAttribute("enterX", event.changedTouches[0].pageX);
 		document.getElementById(id).setAttribute("enterY", event.changedTouches[0].pageY);
