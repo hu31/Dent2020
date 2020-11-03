@@ -1,6 +1,7 @@
 var mobileX = 0;
 var mobileY = 0;
 var mobileDegree = 0;
+var isTouched = 0;
 
 console.log("load js");
 function log(id, str) {
@@ -22,23 +23,7 @@ function mouseup(event) {
 
 function touchend(event) {
 	log("p3", "Touchend: " + event.changedTouches[0].pageX + ", " + event.changedTouches[0].pageY);
-
-	var b = document.getElementById("img1").getBoundingClientRect();
-	log("p4", "Rect: " + b.top + ", " + b.right + ", " + b.left + ", " + b.bottom);
-	var id = event.target.id;
-	if (id != "img1") {
-		return;
-	}
-
-	var x = event.changedTouches[0].pageX;
-	var y = event.changedTouches[0].pageX;
-	if (x < screen.width) {
-		rotateRelative("img1", -30);
-	} else {
-		rotateRelative("img2", 30);
-	}
-	document.getElementById(id).removeAttribute("enterX");
-	document.getElementById(id).removeAttribute("enterY");
+	isTouched = 0;
 }
 
 function mousedown(event) {
@@ -49,6 +34,7 @@ function mousedown(event) {
 
 function touchstart(event) {
 	log("p1", "Touchstart: " + event.changedTouches[0].pageX + ", " + event.changedTouches[0].pageY);
+	isTouched = 1;
 	mobileX = event.changedTouches[0].pageX;
 	mobileY = event.changedTouches[0].pageY;
 }
@@ -145,7 +131,7 @@ function touchmove(event) {
 	if (degree < 1 && degree > -1) {
 		return false;
 	}
-	degree = (mobileDegree + degree) % 360;
+	//degree = (mobileDegree + degree) % 360;
 	
 	rotate("img1", degree);
 
