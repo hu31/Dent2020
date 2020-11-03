@@ -110,6 +110,9 @@ function move(id, X, Y) {
 
 function touchmove(event) {
 	log("p2", "Touchmove: " + event.changedTouches[0].pageX + ", " + event.changedTouches[0].pageY);
+	if (!isTouched) {
+		return;
+	}
 	var rect = document.getElementById("img1").getBoundingClientRect();
 	//log("p4", "Rect: " + rect.top + ", " + rect.right + ", " + rect.left + ", " + rect.bottom);
 	var centerX = (rect.right - rect.left) / 2;
@@ -131,7 +134,7 @@ function touchmove(event) {
 	if (degree < 1 && degree > -1) {
 		return false;
 	}
-	//degree = (mobileDegree + degree) % 360;
+	degree = (mobileDegree + degree) % 360;
 	
 	rotate("img1", degree);
 
