@@ -1,3 +1,7 @@
+var mobileX = 0;
+var mobileY = 0;
+var mobileDegree = 0;
+
 console.log("load js");
 function log(id, str) {
 	document.getElementById(id).textContent=str;
@@ -45,12 +49,8 @@ function mousedown(event) {
 
 function touchstart(event) {
 	log("p1", "Touchstart: " + event.changedTouches[0].pageX + ", " + event.changedTouches[0].pageY);
-	var id = event.target.id;
-	if (id != "img1") {
-		return;
-	}
-	document.getElementById(id).setAttribute("enterX", event.changedTouches[0].pageX);
-	document.getElementById(id).setAttribute("enterY", event.changedTouches[0].pageY);
+	mobileX = event.changedTouches[0].pageX;
+	mobileY = event.changedTouches[0].pageY;
 }
 
 function rotate(id, degree) {
@@ -81,7 +81,7 @@ function move(id, X, Y) {
 	var tempX = document.getElementById(id).getAttribute("enterX");
 	var tempY = document.getElementById(id).getAttribute("enterY");
 
-	console.log("offset: " + obj.offset);
+	console.log("offset: " + obj.offsetTop + ", " + obj.offsetLeft);
 	console.log("temp: " + tempX + " " + tempY);
 	//console.log(obj.width + " " + obj.height);
 	if (tempX == null || tempY == null) {
@@ -124,16 +124,35 @@ function move(id, X, Y) {
 
 function touchmove(event) {
 	log("p2", "Touchmove: " + event.changedTouches[0].pageX + ", " + event.changedTouches[0].pageY);
-	return;
-	var id = event.target.id;
-	if (id != "img1") {
-		return;
-	}
-	if (move(id, event.offsetX, event.offsetY)) {
-		document.getElementById(id).setAttribute("enterX", event.changedTouches[0].pageX);
-		document.getElementById(id).setAttribute("enterY", event.changedTouches[0].pageY);
-	}
+	var rect = document.getElementById("img1").getBoundingClientRect();
+	//log("p4", "Rect: " + rect.top + ", " + rect.right + ", " + rect.left + ", " + rect.bottom);
+	var centerX = (rect.right - rect.left) / 2;
+	var centerY = (rect.bottom - rect.top) / 2;
+
+	var x1 = mobileX - centerX;
+	var y1 = mobileY - centerY;
+
+	var x2 = event.changedTouches[0].pageX - centerX;
+	var y2 = event.changedTouches[0].pageY - centerY;
 	
+	var dot_product = (x1 * y2) - (y1 * x2) ;
+	var degree = degreesToTurn(x1, y1, x2, y2);
+
+	if (dot_product < 0) {
+		degree = degree * -1;
+	}
+	//Only rotate with suffcient degrees
+	if (degree < 1 && degree > -1) {
+		return false;
+	}
+	degree = (mobileDegree + degree) % 360;
+	
+	rotate("img1", degree);
+
+	mobileDegree = degree;
+	
+	log("p4", "Degree: " + degree);
+
 }
 
 function mousemove(event) {

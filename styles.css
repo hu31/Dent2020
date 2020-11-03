@@ -7,10 +7,16 @@ head {
 	height: 100%;
 }
 
+html {
+	overflow: hidden;
+	height: 100%;
+}
+
 body {
 	background-color: #00FFFF;
 	overflow: hidden;
 	height: 100%;
+	position: relative;
 }
 
 p {
@@ -18,6 +24,7 @@ p {
 }
 
 div {
+	position: static;
 }
 
 .circle {
