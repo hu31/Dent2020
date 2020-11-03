@@ -125,7 +125,7 @@ function touchmove(event) {
 	var y2 = event.changedTouches[0].pageY - centerY;
 	
 	var dot_product = (x1 * y2) - (y1 * x2) ;
-	var degree = degreesToTurn(x1, y1, x2, y2);
+	var degree = degreesToTurn(x1, y1, x2, y2) || 0;
 
 	if (dot_product < 0) {
 		degree = degree * -1;
@@ -139,6 +139,8 @@ function touchmove(event) {
 	rotate("img1", degree);
 
 	mobileDegree = degree;
+	mobileX = event.changedTouches[0].pageX;
+	mobileY = event.changedTouches[0].pageY;
 	
 	log("p4", "Degree: " + degree);
 
