@@ -23,8 +23,25 @@ p {
 	background-color: #FF0000;
 }
 
-div {
-	position: static;
+#divimages {
+	position: relative;
+	width: 100%;
+	height: 80%;
+}
+
+#menu {
+	position: relative;
+	width: auto;
+	height: 10%;
+	background-color: #00FF00;
+}
+
+#header {
+	position: relative;
+	width: auto;
+	height: 10%;
+	background-color: #021814;
+	color: #ffffff;
 }
 
 .circle {
@@ -42,8 +59,6 @@ div {
 #img1 {
 	width: 100%;
 	height: 100%;
-	max-width: 100%;
-	max-height: 100%;
 	object-fit: contain;
 	border-radius: 50%;
 }
@@ -52,9 +67,14 @@ div {
 #img3 {
 	width: 100%;
 	height: 100%;
-	max-width: 100%;
-	max-height: 100%;
 	object-fit: contain;
 	visibility: visible;
 	pointer-events: none;
+}
+
+#img4 {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	
 }
