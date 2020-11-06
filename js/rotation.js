@@ -169,5 +169,10 @@ function color2(event) {
 
 function loadContent() {
 	console.log("Load!");
-	document.getElementById("img1").visibility="visible";
+	document.getElementById("img1").style.visibility="visible";
+}
+
+function changeImage(event) {
+	//document.getElementById("img1").src="resources/images/107ver1trial.png";
+	document.getElementById("img1").src=event.target.src;
 }
