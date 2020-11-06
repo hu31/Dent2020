@@ -56,11 +56,27 @@ p {
 	bottom: 0;
 }
 
+.menucircle {
+	display: inline;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:auto;
+	margin-bottom:auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width: auto;
+	height: 100%;
+	object-fit: contain;
+}
+
 #img1 {
 	width: 100%;
 	height: 100%;
 	object-fit: contain;
 	border-radius: 50%;
+	visibility: hidden;
 }
 
 
@@ -70,11 +86,4 @@ p {
 	object-fit: contain;
 	visibility: visible;
 	pointer-events: none;
-}
-
-#img4 {
-	width: 100%;
-	height: 100%;
-	object-fit: contain;
-	
 }
