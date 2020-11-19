@@ -191,4 +191,6 @@ function loadContent() {
 function changeImage(event) {
 	//document.getElementById("img1").src="resources/images/107ver1trial.png";
 	document.getElementById("img1").src=event.target.src;
+	currentDegree = 0;
+	rotate("img1", 0);
 }
