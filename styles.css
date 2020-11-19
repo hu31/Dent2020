@@ -54,8 +54,8 @@ p {
 	width: auto;
 	height: 15%;
 	background-color: #90CAD2;
-	overflow-x: visible;
-	overflow-y: visible;
+	overflow-x: auto;
+	overflow-y: hidden;
 	/*white-space: nowrap;*/
 	justify-content: center;
 	align-items: center;
