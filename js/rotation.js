@@ -3,6 +3,11 @@ var mobileY = 0;
 var mobileDegree = 0;
 var isTouched = 0;
 
+document.addEventListener('touchmove', function (e) {e.preventDefault();}, false);
+document.addEventListener('touchstart', function (e) {e.preventDefault();}, false);
+
+document.addEventListener('touchend', function (e) {e.preventDefault();}, false);
+
 console.log("load js");
 function log(id, str) {
 	document.getElementById(id).textContent=str;
@@ -17,8 +22,9 @@ function p2(event) {
 
 function mouseup(event) {
 	var id = event.target.id;
-	document.getElementById(id).removeAttribute("enterX");
-	document.getElementById(id).removeAttribute("enterY");
+	//document.getElementById(id).removeAttribute("enterX");
+	//document.getElementById(id).removeAttribute("enterY");
+	isTouched = 0;
 }
 
 function touchend(event) {
@@ -28,8 +34,11 @@ function touchend(event) {
 
 function mousedown(event) {
 	var id = event.target.id;
-	document.getElementById(id).setAttribute("enterX", event.offsetX);
-	document.getElementById(id).setAttribute("enterY", event.offsetY);
+	//document.getElementById(id).setAttribute("enterX", event.offsetX);
+	//document.getElementById(id).setAttribute("enterY", event.offsetY);
+	mobileX = event.offsetX;
+	mobileY = event.offsetY;
+	isTouched = 1;
 }
 
 function touchstart(event) {
@@ -45,7 +54,7 @@ function rotate(id, degree) {
 }
 
 function rotateRelative (id, degree) {
-	var currentDegree = document.getElementById(id).getAttribute('currentDegree');
+	var currentDegree = mobileDegree;
 	rotate (id, currentDegree+degree);
 }
 
@@ -64,25 +73,34 @@ function degreesToTurn(x1,y1,x2,y2) {
 
 function move(id, X, Y) {
 	var obj = document.getElementById(id);
-	var tempX = document.getElementById(id).getAttribute("enterX");
-	var tempY = document.getElementById(id).getAttribute("enterY");
+	//var tempX = document.getElementById(id).getAttribute("enterX");
+	//var tempY = document.getElementById(id).getAttribute("enterY");
 
 	console.log("offset: " + obj.offsetTop + ", " + obj.offsetLeft);
-	console.log("temp: " + tempX + " " + tempY);
-	//console.log(obj.width + " " + obj.height);
-	if (tempX == null || tempY == null) {
-		return false;
-	}
-	var enterX = parseInt(tempX);
-	var enterY = parseInt(tempY);
 
-	if (enterX == null || enterY == null) {
+	if (!isTouched) {
 		return false;
 	}
+
+	var enterX = mobileX;
+	var enterY = mobileY;
+
+	//console.log("temp: " + tempX + " " + tempY);
+	//console.log(obj.width + " " + obj.height);
+	//if (tempX == null || tempY == null) {
+	//	return false;
+	//}
+	//var enterX = parseInt(tempX);
+	//var enterY = parseInt(tempY);
+
+	//if (enterX == null || enterY == null) {
+	//	return false;
+	//}
 
 	var centerX = obj.width / 2;
 	var centerY = obj.height / 2;
-	var currentDegree = parseInt(document.getElementById(id).getAttribute("currentdegree"));
+	//var currentDegree = parseInt(document.getElementById(id).getAttribute("currentdegree"));
+	var currentDegree = mobileDegree;
 	
 	enterX = enterX - centerX;
 	enterY = enterY - centerY;
@@ -102,7 +120,8 @@ function move(id, X, Y) {
 	degree = (currentDegree + degree) % 360;
 	
 	rotate(id, degree);
-	document.getElementById(id).setAttribute("currentdegree", degree);
+	//document.getElementById(id).setAttribute("currentdegree", degree);
+	mobileDegree = degree;
 	//document.getElementById(id).setAttribute("enterX", event.offsetX);
 	//document.getElementById(id).setAttribute("enterY", event.offsetY);
 	return true;
@@ -149,8 +168,10 @@ function touchmove(event) {
 function mousemove(event) {
 	var id = event.target.id;
 	if (move(id, event.offsetX, event.offsetY)) {
-		document.getElementById(id).setAttribute("enterX", event.offsetX);
-		document.getElementById(id).setAttribute("enterY", event.offsetY);
+		//document.getElementById(id).setAttribute("enterX", event.offsetX);
+		mobileX = event.offsetX;
+		//document.getElementById(id).setAttribute("enterY", event.offsetY);
+		mobileY = event.offsetY;
 	}
 }
 

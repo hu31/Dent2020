@@ -13,35 +13,28 @@ html {
 }
 
 body {
-	background-color: #00FFFF;
+	background-color: #90CAD2;
 	overflow: hidden;
 	height: 100%;
 	position: relative;
 }
 
 p {
-	background-color: #FF0000;
+	background-color: #90CAD2;
 }
 
 #divimages {
 	position: relative;
 	width: 100%;
-	height: 80%;
-}
-
-#menu {
-	position: relative;
-	width: auto;
-	height: 10%;
-	background-color: #00FF00;
+	height: 75%;
 }
 
 #header {
 	position: relative;
 	width: auto;
 	height: 10%;
-	background-color: #021814;
-	color: #ffffff;
+	background-color: #90CAD2;
+	color: #F7CF33;
 }
 
 .circle {
@@ -56,24 +49,37 @@ p {
 	bottom: 0;
 }
 
-.menucircle {
-	display: inline;
-	margin-left:auto;
-	margin-right:auto;
-	margin-top:auto;
-	margin-bottom:auto;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
+#menu {
+	position: relative;
+	width: auto;
+	height: 10%;
+	background-color: #90CAD2;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	white-space: nowrap;
+}
+
+#menu img {
+	display: inline-block;
+	margin-top: auto;
+	margin-bottom: auto;
 	width: auto;
 	height: 100%;
+	padding: 0px 0px;
+	text-align: center;
 	object-fit: contain;
+	border-radius: 50%;
+	opacity: 0.5;
+}
+
+#menu img:hover{
+	background-color: #55BB55;
+	opacity: 1.0;
 }
 
 #img1 {
-	width: 100%;
-	height: 100%;
+	width: 90%;
+	height: 90%;
 	object-fit: contain;
 	border-radius: 50%;
 	visibility: hidden;
