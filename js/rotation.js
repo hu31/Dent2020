@@ -3,11 +3,6 @@ var mobileY = 0;
 var mobileDegree = 0;
 var isTouched = 0;
 
-document.addEventListener('touchmove', function (e) {e.preventDefault();}, false);
-document.addEventListener('touchstart', function (e) {e.preventDefault();}, false);
-
-document.addEventListener('touchend', function (e) {e.preventDefault();}, false);
-
 console.log("load js");
 function log(id, str) {
 	document.getElementById(id).textContent=str;

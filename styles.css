@@ -3,20 +3,19 @@
 	transform: rotate(20deg);
 }
 
-head {
-	height: 100%;
-}
 
 html {
 	overflow: hidden;
-	height: 100%;
+	height: 100vh;
+	position: relative;
 }
 
 body {
 	background-color: #90CAD2;
 	overflow: hidden;
-	height: 100%;
+	height: 100vh;
 	position: relative;
+	margin: 0px;
 }
 
 p {
@@ -50,13 +49,16 @@ p {
 }
 
 #menu {
+	display: flex;
 	position: relative;
 	width: auto;
-	height: 10%;
+	height: 15%;
 	background-color: #90CAD2;
-	overflow-x: hidden;
-	overflow-y: hidden;
-	white-space: nowrap;
+	overflow-x: visible;
+	overflow-y: visible;
+	/*white-space: nowrap;*/
+	justify-content: center;
+	align-items: center;
 }
 
 #menu img {
@@ -64,16 +66,16 @@ p {
 	margin-top: auto;
 	margin-bottom: auto;
 	width: auto;
-	height: 100%;
-	padding: 0px 0px;
-	text-align: center;
-	object-fit: contain;
-	border-radius: 50%;
+	height: 90%;
+	/*padding: 3% 3% 3% 3%;*/
+	/*text-align: center;*/
+	overflow: visible;
+	/*border-radius: 50%;*/
 	opacity: 0.5;
 }
 
 #menu img:hover{
-	background-color: #55BB55;
+	/*background-color: #55BB55;*/
 	opacity: 1.0;
 }
 
