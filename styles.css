@@ -108,22 +108,22 @@ p {
 
 @media only screen and (max-width: 768px) {
 	html {
-		height: 100%;
+		height: 100vh;
 	}
 
 	body {
-		height: 100%;
+		height: 100vh;
 	}
 
 	#header {
-		height: 10%;
+		height: 10vh;
 	}
 
 	#divimages {
-		height: 65%;
+		height: 65vh;
 	}
 
 	#menu {
-		height: 20%;
+		height: 20vh;
 	}
 }
