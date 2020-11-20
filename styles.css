@@ -103,4 +103,19 @@ p {
 	#img3::selection {
 		color: transparent;
 	}
+
+}
+
+@media only screen and (max-width: 768px) {
+	#header {
+		height: 10%;
+	}
+
+	#divimages {
+		height: 65%;
+	}
+
+	#menu {
+		height: 10%;
+	}
 }
