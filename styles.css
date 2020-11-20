@@ -87,9 +87,6 @@ p {
 	visibility: hidden;
 }
 
-#img1::selection {
-	color: transparent;
-}
 
 #img3 {
 	width: 100%;
@@ -99,6 +96,11 @@ p {
 	pointer-events: none;
 }
 
-#img3::selection {
-	color: transparent;
+@media only screen and (min-width: 768px) {
+	#img1::selection {
+		color: transparent;
+	}
+	#img3::selection {
+		color: transparent;
+	}
 }
