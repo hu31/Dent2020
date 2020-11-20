@@ -89,6 +89,9 @@ p {
 	visibility: hidden;
 }
 
+#img1::selection {
+	color: transparent;
+}
 
 #img3 {
 	width: 100%;
@@ -96,4 +99,8 @@ p {
 	object-fit: contain;
 	visibility: visible;
 	pointer-events: none;
+}
+
+#img3::selection {
+	color: transparent;
 }
