@@ -111,6 +111,12 @@ function move(id, X, Y) {
 	if (degree < 1 && degree > -1) {
 		return false;
 	}
+	if (degree > 10) {
+		degree = 10;
+	}
+	if (degree < -10) {
+		degree = -10;
+	}
 	console.log("degree: " + degree);
 	degree = (currentDegree + degree) % 360;
 	
