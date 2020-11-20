@@ -107,6 +107,14 @@ p {
 }
 
 @media only screen and (max-width: 768px) {
+	html {
+		height: 100%;
+	}
+
+	body {
+		height: 100%;
+	}
+
 	#header {
 		height: 10%;
 	}
@@ -116,6 +124,6 @@ p {
 	}
 
 	#menu {
-		height: 10%;
+		height: 20%;
 	}
 }
