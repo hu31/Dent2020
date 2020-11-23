@@ -196,13 +196,19 @@ function loadContent() {
 }
 
 function changeImage(event) {
+	console.log("change image");
 	//document.getElementById("img1").src="resources/images/107ver1trial.png";
 	document.getElementById("img1").src=event.target.src;
-	document.getElementById("img1").front=event.target.front;
-	document.getElementById("img1").back=event.target.back;
+	//document.getElementById("img1").front=event.target.front;
+	//document.getElementById("img1").back=event.target.back;
+
+	document.getElementById("img1").setAttribute("front", event.target.getAttribute("front"));
+	document.getElementById("img1").setAttribute("back", event.target.getAttribute("back"));
 	document.getElementById("img3").src=document.getElementById("img3").getAttribute("front");
 	isFront=true;
-	currentDegree = 0;
+	mobileDegree = 0;
+	mobileX = 0;
+	mobileY = 0;
 	rotate("img1", 0);
 }
 
