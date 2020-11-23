@@ -4,6 +4,12 @@ var mobileDegree = 0;
 var isTouched = 0;
 var isFront = true;
 
+window.oncontextmenu = function (event) {
+	event.preventDefault();
+	event.stopPropagation();
+	return false;
+}
+
 console.log("load js");
 function log(id, str) {
 	document.getElementById(id).textContent=str;
