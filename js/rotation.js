@@ -2,6 +2,7 @@ var mobileX = 0;
 var mobileY = 0;
 var mobileDegree = 0;
 var isTouched = 0;
+var isFront = true;
 
 console.log("load js");
 function log(id, str) {
@@ -197,6 +198,26 @@ function loadContent() {
 function changeImage(event) {
 	//document.getElementById("img1").src="resources/images/107ver1trial.png";
 	document.getElementById("img1").src=event.target.src;
+	document.getElementById("img1").front=event.target.front;
+	document.getElementById("img1").back=event.target.back;
+	document.getElementById("img3").src=document.getElementById("img3").getAttribute("front");
+	isFront=true;
 	currentDegree = 0;
 	rotate("img1", 0);
+}
+
+function flip (event) {
+	console.log("flip");
+	isFront = !isFront;
+	var obj = document.getElementById("img1");
+	var obj2 = document.getElementById("img3");
+	if (isFront) {
+		obj.src = obj.getAttribute("front");
+		obj2.src = obj2.getAttribute("front");
+		return;
+	}
+	if (!isFront) {
+		obj.src = obj.getAttribute("back");
+		obj2.src = obj2.getAttribute("back");
+	}
 }
