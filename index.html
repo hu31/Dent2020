@@ -21,7 +21,9 @@
 			<img id='img1'  class="circle" src="resources/images/107ver1.png" alt="A circle and a line" front="resources/images/107ver1.png" back = "resources/images/One.png" draggable='false'  onmousemove="mousemove(event)" onmousedown="mousedown(event)" onmouseup="mouseup(event)" ontouchmove="touchmove(event)" ontouchstart="touchstart(event)" ontouchend="touchend(event)" currentdegree='0'>
 			<img id='img3' class="circle" src="resources/images/Front.png" alt="Outer wall" front="resources/images/Front.png" back = "resources/images/Back.png" draggable='false' currentX='0' currentY='0' currentdegree='0' onload="loadContent()" onclick="rotator(event)">
 		</div>
-		<button onclick="flip(event)">翻面!!!</button>
+		<div id="buttondiv">
+			<button onclick="flip(event)">翻面!!!</button>
+		</div>
 		<div id="menu">
 			<img class="menucircle" src="resources/images/107ver1.png" front="resources/images/107ver1.png" back="resources/images/One.png" alt="Menu" onclick="changeImage(event)">
 			<img class="menucircle" src="resources/images/107ver1.png" front="resources/images/107ver1.png" back="resources/images/Two.png" alt="Menu" onclick="changeImage(event)">

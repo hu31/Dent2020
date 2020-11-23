@@ -13,8 +13,9 @@ html {
 body {
 	background-color: #90CAD2;
 	overflow: hidden;
-	height: 100vh;
-	position: relative;
+	height: 100%;
+	width: 100%;
+	position: fixed;
 	margin: 0px;
 }
 
@@ -96,12 +97,20 @@ p {
 	pointer-events: none;
 }
 
-button {
+#buttondiv {
 	position: relative;
 	height: 5%;
 	width: 100%;
+	text-align: center;
+}
+
+button {
+	width: 25%;
+	position: flex;
 	margin: 5px 5px 5px 5px;
-	border: 2px solid #FF0000;
+	border: 5px solid #FF0000;
+	background: #90FFD2;
+	border-radius: 8px;
 }
 
 /*Non-mobile devices*/
@@ -128,6 +137,7 @@ button {
 	#header {
 		height: 10vh;
 		visibility: hidden;
+		display: none;
 	}
 
 	#divimages {
