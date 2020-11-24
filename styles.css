@@ -50,16 +50,17 @@ p {
 }
 
 #menu {
-	display: flex;
+	/*display: list-item;*/
 	position: relative;
 	width: auto;
 	height: 10%;
 	background-color: #90CAD2;
 	overflow-x: auto;
 	overflow-y: hidden;
-	/*white-space: nowrap;*/
+	white-space: nowrap;
 	justify-content: center;
 	align-items: center;
+	text-align: center;
 }
 
 #menu img {
@@ -102,6 +103,7 @@ p {
 	height: 5%;
 	width: 100%;
 	text-align: center;
+	margin: 5px 5px 5px 5px;
 }
 
 button {
