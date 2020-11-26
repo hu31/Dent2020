@@ -81,6 +81,53 @@ p {
 	opacity: 1.0;
 }
 
+
+#menu2 {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	width: auto;
+	height: 10%;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	scrollbar-width: thin;
+	
+}
+
+a {
+	position: relative;
+	text-align: center;
+	height: 25%;
+}
+
+.divcontainer {
+	position: relative;
+	display: inline-flex;
+	flex-direction: column;
+	height: 100%;
+	width: 13%;
+}
+
+.divcontainer2 {
+	position: relative;
+	display: flex;
+	height: 75%;
+	width: auto;
+}
+
+.divcontainer2 img {
+	display: block;
+	position: relative;
+	object-fit: contain;
+	height: auto;
+	width: auto;
+	opacity: 0.5;
+}
+
+.divcontainer2 img:hover {
+	opacity: 1;
+}
+
 #img1 {
 	width: 100%;
 	height: 100%;
