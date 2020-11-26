@@ -197,6 +197,9 @@ button {
 
 	#buttondiv {
 		height: 5%;
+		position: -webkit-sticky;
+		position: sticky;
+		bottom: 3px;
 	}
 	
 	#menu {
