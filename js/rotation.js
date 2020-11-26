@@ -10,9 +10,8 @@ window.oncontextmenu = function (event) {
 	return false;
 }
 
-console.log("load js");
 function log(id, str) {
-	document.getElementById(id).textContent=str;
+	//document.getElementById(id).textContent=str;
 }
 
 function p2(event) {
@@ -30,7 +29,6 @@ function mouseup(event) {
 }
 
 function touchend(event) {
-	log("p3", "Touchend: " + event.changedTouches[0].pageX + ", " + event.changedTouches[0].pageY);
 	isTouched = 0;
 }
 
@@ -44,7 +42,6 @@ function mousedown(event) {
 }
 
 function touchstart(event) {
-	log("p1", "Touchstart: " + event.changedTouches[0].pageX + ", " + event.changedTouches[0].pageY);
 	isTouched = 1;
 	mobileX = event.changedTouches[0].pageX;
 	mobileY = event.changedTouches[0].pageY;
@@ -136,12 +133,10 @@ function move(id, X, Y) {
 }
 
 function touchmove(event) {
-	log("p2", "Touchmove: " + event.changedTouches[0].pageX + ", " + event.changedTouches[0].pageY);
 	if (!isTouched) {
 		return;
 	}
 	var rect = document.getElementById("img1").getBoundingClientRect();
-	//log("p4", "Rect: " + rect.top + ", " + rect.right + ", " + rect.left + ", " + rect.bottom);
 	var centerX = (rect.right - rect.left) / 2;
 	var centerY = (rect.bottom - rect.top) / 2;
 
@@ -169,7 +164,6 @@ function touchmove(event) {
 	mobileX = event.changedTouches[0].pageX;
 	mobileY = event.changedTouches[0].pageY;
 	
-	log("p4", "Degree: " + degree);
 
 }
 
@@ -188,21 +182,11 @@ function rotator(event) {
 	
 }
 
-function color(event) {
-	document.getElementById("p1").textContent="Dent";
-}
-
-function color2(event) {
-	document.getElementById("p1").textContent="這是文字";
-}
-
 function loadContent() {
-	console.log("Load!");
 	document.getElementById("img1").style.visibility="visible";
 }
 
 function changeImage(event) {
-	console.log("change image");
 	//document.getElementById("img1").src="resources/images/107ver1trial.png";
 	document.getElementById("img1").src=event.target.src;
 	//document.getElementById("img1").front=event.target.front;
@@ -219,7 +203,6 @@ function changeImage(event) {
 }
 
 function flip (event) {
-	console.log("flip");
 	isFront = !isFront;
 	var obj = document.getElementById("img1");
 	var obj2 = document.getElementById("img3");
