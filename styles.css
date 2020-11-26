@@ -192,7 +192,7 @@ button {
 	}
 
 	#divimages {
-		height: 85%;
+		height: 65%;
 	}
 
 	#buttondiv {
@@ -202,9 +202,6 @@ button {
 	#menu {
 		height: 10%;
 		z-index: 1;
-	
-		-ms-overflow-style: none;/*Hide scroll bar in Edge*/
-		scrollbar-width: none; /*Hide scroll bar in firefox*/
 	}
 	
 	#menu img {
@@ -213,9 +210,4 @@ button {
 		height: 90%;
 		z-index: 2;
 	}
-
-	#menu::-webkit-scrollbar {
-		display: none; /*Hide scroll bar in chrome and safari*/
-	}
-
 }
