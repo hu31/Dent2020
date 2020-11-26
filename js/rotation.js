@@ -231,12 +231,11 @@ function flip (event) {
 	if (isFront) {
 		obj.src = obj.getAttribute("front");
 		obj2.src = obj2.getAttribute("front");
-		return;
-	}
-	if (!isFront) {
+	} else {
 		obj.src = obj.getAttribute("back");
 		obj2.src = obj2.getAttribute("back");
 	}
+	changeMenu(g_index);
 }
 
 function setDisc(container, content) {
@@ -248,7 +247,8 @@ function setDisc(container, content) {
 	container.getElementsByTagName("a")[0].innerHTML = name;
 
 	var imgobj = container.getElementsByTagName("div")[0].getElementsByTagName("img")[0];
-	if (isFront = true) {
+	console.log(isFront);
+	if (isFront) {
 		imgobj.src = front;
 	} else {
 		imgobj.src = back;
