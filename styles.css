@@ -183,6 +183,7 @@ button {
 
 	body {
 		height: 90vh;
+		bottom: 0px;
 	}
 
 	#header {
@@ -208,6 +209,12 @@ button {
 		z-index: 1;
 	}*/
 	
+	#menu2 {
+		top: 0px;
+		width: auto;
+		height: auto;
+	}
+
 	#menu img {
 		top: 1%;
 		bottom: 1%;
