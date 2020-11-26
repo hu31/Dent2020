@@ -204,18 +204,24 @@ function loadBody() {
 function changeImage(event) {
 	//document.getElementById("img1").src="resources/images/107ver1trial.png";
 	console.log(event.target);
-	document.getElementById("img1").src=event.target.src;
+	var dest;
+	if (isFront) {
+		dest = event.target.getAttribute("front");
+	} else {
+		dest = event.target.getAttribute("back");
+	}
+	document.getElementById("img1").src=dest;
 	//document.getElementById("img1").front=event.target.front;
 	//document.getElementById("img1").back=event.target.back;
 
 	document.getElementById("img1").setAttribute("front", event.target.getAttribute("front"));
 	document.getElementById("img1").setAttribute("back", event.target.getAttribute("back"));
-	document.getElementById("img3").src=document.getElementById("img3").getAttribute("front");
-	isFront=true;
-	mobileDegree = 0;
-	mobileX = 0;
-	mobileY = 0;
-	rotate("img1", 0);
+	//document.getElementById("img3").src=document.getElementById("img3").getAttribute("front");
+	//isFront=true;
+	//mobileDegree = 0;
+	//mobileX = 0;
+	//mobileY = 0;
+	//rotate("img1", 0);
 }
 
 function flip (event) {
@@ -242,7 +248,11 @@ function setDisc(container, content) {
 	container.getElementsByTagName("a")[0].innerHTML = name;
 
 	var imgobj = container.getElementsByTagName("div")[0].getElementsByTagName("img")[0];
-	imgobj.src = front;
+	if (isFront = true) {
+		imgobj.src = front;
+	} else {
+		imgobj.src = back;
+	}
 	imgobj.setAttribute("front", front);
 	imgobj.setAttribute("back", back);
 }

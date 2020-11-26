@@ -67,7 +67,7 @@ p {
 	height: 100%;
 	overflow-x: hidden;
 	overflow-y: hidden;
-	
+	z-index: 5;
 }
 
 a {
@@ -110,6 +110,7 @@ a {
 	object-fit: contain;
 	border-radius: 50%;
 	visibility: hidden;
+	z-index: 1;
 }
 
 
@@ -119,6 +120,7 @@ a {
 	object-fit: contain;
 	visibility: visible;
 	pointer-events: none;
+	z-index: 3;
 }
 
 #buttondiv {
@@ -126,6 +128,7 @@ a {
 	height: 10%;
 	width: 100%;
 	text-align: center;
+	z-index: 5;
 }
 
 button {
