@@ -8,50 +8,30 @@
 		<link rel="stylesheet" href="styles.css">
 		<link rel="manifest" href="manifest.json">
 	</head>
-	<body onload="loadContent()">
+	<body onload="loadBody()">
 		<div id="menu2">
-			<div class="divcontainer">
-				<div class="divcontainer2">
-				<img class="menucircle" src="resources/images/107ver1.png" front="resources/images/107ver1.png" back="resources/images/One.png" alt="Menu" onclick="changeImage(event)">
+			<div id="previous" onclick="toPrevious()">&lt;</div>
+			<div id="menu3">
+				<div class="divcontainer">
+					<div class="divcontainer2">
+						<img class="menucircle" onclick="changeImage(event)">
+					</div>
+					<a>大一</a>
 				</div>
-				<a>大一</a>
-			</div>
-			<div class="divcontainer">
-				<div class="divcontainer2">
-				<img class="menucircle" src="resources/images/107ver1.png" front="resources/images/107ver1.png" back="resources/images/Two.png" alt="Menu" onclick="changeImage(event)">
+				<div class="divcontainer">
+					<div class="divcontainer2">
+						<img class="menucircle" onclick="changeImage(event)">
+					</div>
+					<a>大一</a>
 				</div>
-				<a>大二</a>
-			</div>
-			<div class="divcontainer">
-				<div class="divcontainer2">
-					<img class="menucircle" src="resources/images/107ver1.png" front="resources/images/107ver1.png" back="resources/images/ThreeDance.png" alt="Menu" onclick="changeImage(event)">
+				<div class="divcontainer">
+					<div class="divcontainer2">
+						<img class="menucircle" onclick="changeImage(event)">
+					</div>
+					<a>大一</a>
 				</div>
-				<a>大三舞</a>
 			</div>
-			<div class="divcontainer">
-				<div class="divcontainer2">
-					<img class="menucircle" src="resources/images/107ver1.png" front="resources/images/107ver1.png" back="resources/images/ThreeMusic.png" alt="Menu" onclick="changeImage(event)">
-				</div>
-				<a>大三樂</a>
-			</div>
-			<div class="divcontainer">
-				<div class="divcontainer2">
-					<img class="menucircle" src="resources/images/107ver1.png" front="resources/images/107ver1.png" back="resources/images/ThreeDrama.png" alt="Menu" onclick="changeImage(event)">
-				</div>
-				<a>大三劇</a>
-			</div>
-			<div class="divcontainer">
-				<div class="divcontainer2">
-					<img class="menucircle" src="resources/images/107ver1.png" front="resources/images/107ver1.png" back="resources/images/Four.png" alt="Menu" onclick="changeImage(event)">
-				</div>
-				<a>大四</a>
-			</div>
-			<div class="divcontainer">
-				<div class="divcontainer2">
-					<img class="menucircle" src="resources/images/107ver1.png" front="resources/images/107ver1.png" back="resources/images/Five.png" alt="Menu" onclick="changeImage(event)">
-				</div>
-				<a>大五</a>
-			</div>
+			<div id="next" onclick="toNext()">&gt;</div>
 		</div>
 		<div id="divimages">
 			<img id='img1'  class="circle" src="resources/images/107ver1.png" alt="A circle and a line" front="resources/images/107ver1.png" back = "resources/images/One.png" draggable='false'  onmousemove="mousemove(event)" onmousedown="mousedown(event)" onmouseup="mouseup(event)" ontouchmove="touchmove(event)" ontouchstart="touchstart(event)" ontouchend="touchend(event)" currentdegree='0'>

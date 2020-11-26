@@ -49,48 +49,24 @@ p {
 	bottom: 0;
 }
 
-#menu {
-	/*display: list-item;*/
-	position: relative;
-	width: auto;
-	height: 10%;
-	background-color: #90CAD2;
-	overflow-x: auto;
-	overflow-y: hidden;
-	white-space: nowrap;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-}
-
-#menu img {
-	/*display: inline-block;*/
-	height: 100%;
-	width: auto;
-	/*padding: 3% 3% 3% 3%;*/
-	padding-left: 1em;
-	padding-right: 0em;
-	/*text-align: center;*/
-	overflow: visible;
-	/*border-radius: 50%;*/
-	opacity: 0.5;
-}
-
-#menu img:hover{
-	/*background-color: #55BB55;*/
-	opacity: 1.0;
-}
-
-
 #menu2 {
 	position: relative;
 	display: flex;
 	justify-content: center;
 	width: auto;
 	height: 10%;
-	overflow-x: scroll;
+	overflow-x: hidden;
 	overflow-y: hidden;
-	scrollbar-width: thin;
+}
+
+#menu3 {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	width: auto;
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: hidden;
 	
 }
 

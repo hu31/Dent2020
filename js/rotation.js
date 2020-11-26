@@ -3,6 +3,17 @@ var mobileY = 0;
 var mobileDegree = 0;
 var isTouched = 0;
 var isFront = true;
+var g_index = 0;
+
+var discs = [
+	{"name":"大一", "front":"resources/images/107ver1.png", "back":"resources/images/One.png"},
+	{"name":"大二", "front":"resources/images/107ver1.png", "back":"resources/images/Two.png"},
+	{"name":"大三舞", "front":"resources/images/107ver1.png", "back":"resources/images/ThreeDance.png"},
+	{"name":"大三樂", "front":"resources/images/107ver1.png", "back":"resources/images/ThreeMusic.png"},
+	{"name":"大三劇", "front":"resources/images/107ver1.png", "back":"resources/images/ThreeDrama.png"},
+	{"name":"大四", "front":"resources/images/107ver1.png", "back":"resources/images/Four.png"},
+	{"name":"大五", "front":"resources/images/107ver1.png", "back":"resources/images/Five.png"}
+];
 
 window.oncontextmenu = function (event) {
 	event.preventDefault();
@@ -186,8 +197,13 @@ function loadContent() {
 	document.getElementById("img1").style.visibility="visible";
 }
 
+function loadBody() {
+	changeMenu(0);
+}
+
 function changeImage(event) {
 	//document.getElementById("img1").src="resources/images/107ver1trial.png";
+	console.log(event.target);
 	document.getElementById("img1").src=event.target.src;
 	//document.getElementById("img1").front=event.target.front;
 	//document.getElementById("img1").back=event.target.back;
@@ -215,4 +231,43 @@ function flip (event) {
 		obj.src = obj.getAttribute("back");
 		obj2.src = obj2.getAttribute("back");
 	}
+}
+
+function setDisc(container, content) {
+	var name = content["name"];
+	var front = content["front"];
+	var back = content["back"];
+
+	console.log(container);
+	container.getElementsByTagName("a")[0].innerHTML = name;
+
+	var imgobj = container.getElementsByTagName("div")[0].getElementsByTagName("img")[0];
+	imgobj.src = front;
+	imgobj.setAttribute("front", front);
+	imgobj.setAttribute("back", back);
+}
+
+function changeMenu (index) {
+	obj = document.getElementById("menu3");
+	divcontainer = obj.children;
+	var count = divcontainer.length;
+	console.log ("count" + count);
+	if (count < 1) {
+		return;
+	}
+
+	g_index = index;
+	var i = 0;
+	for (i=0; i<count; i++, index++) {
+		console.log(i + "," + index % discs.length);
+		setDisc(divcontainer[i], discs[index % discs.length]);
+	}
+}
+
+function toNext() {
+	changeMenu(g_index + 1);
+}
+
+function toPrevious() {
+	changeMenu(g_index - 1);
 }
