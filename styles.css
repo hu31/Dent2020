@@ -15,7 +15,7 @@ body {
 	overflow: hidden;
 	height: 100%;
 	width: 100%;
-	position: fixed;
+	position: absolute;
 	margin: 0px;
 }
 
@@ -192,13 +192,13 @@ button {
 
 	#divimages {
 		height: 80%;
-		position: fixed;
+		position: absolute;
 		bottom: 0px;
 	}
 
 	#buttondiv {
 		height: 5%;
-		position: fixed;
+		position: absolute;
 		bottom: 3px;
 	}
 	
@@ -218,7 +218,7 @@ button {
 	#menu2 {
 		height: 15%;
 		width: 100%;
-		position: fixed;
+		position: absolute;
 		top: 0px;
 		margin: 5px 5px 5px 5px
 	}
