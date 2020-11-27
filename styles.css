@@ -191,13 +191,14 @@ button {
 	}
 
 	#divimages {
-		height: 90%;
+		height: 80%;
+		position: fixed;
+		bottom: 0px;
 	}
 
 	#buttondiv {
 		height: 5%;
-		position: -webkit-sticky;
-		position: sticky;
+		position: fixed;
 		bottom: 3px;
 	}
 	
@@ -216,6 +217,9 @@ button {
 
 	#menu2 {
 		height: 15%;
+		position: fixed;
+		top: 0px;
+		margin: 5px 5px 5px 5px
 	}
 
 	#menu3 {
