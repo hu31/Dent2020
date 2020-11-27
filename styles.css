@@ -63,7 +63,7 @@ p {
 	position: relative;
 	display: flex;
 	justify-content: center;
-	width: auto;
+	width: 60%;
 	height: 100%;
 	overflow-x: hidden;
 	overflow-y: hidden;
@@ -95,13 +95,32 @@ a {
 	display: block;
 	position: relative;
 	object-fit: contain;
-	height: auto;
-	width: auto;
+	height: 90%;
+	width: 90%;
 	opacity: 0.5;
 }
 
 .divcontainer2 img:hover {
 	opacity: 1;
+}
+
+#previous, #next {
+	width: 10%;
+	height: 100%;
+	text-align: center;
+	justify-content: center;
+	z-index: 5;
+}
+
+#previous {
+	transform:rotate(180deg);
+}
+
+.arrow {
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	text-align: center;
 }
 
 #img1 {
@@ -188,16 +207,27 @@ button {
 		z-index: 1;
 	}*/
 	
-	#menu2 {
-		top: 0px;
-		width: auto;
-		height: auto;
-	}
-
 	#menu img {
 		top: 1%;
 		bottom: 1%;
 		height: 90%;
 		z-index: 2;
+	}
+
+	#menu2 {
+		height: 15%;
+	}
+
+	#menu3 {
+		width: 80%;
+	}
+
+	.divcontainer {
+			width: 25%;
+	}
+
+	.divcontainer2 img {
+		height: 100%;
+		width: 100%;
 	}
 }

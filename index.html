@@ -10,13 +10,9 @@
 	</head>
 	<body onload="loadBody()">
 		<div id="menu2">
-			<div id="previous" onclick="toPrevious()">&lt;</div>
 			<div id="menu3">
-				<div class="divcontainer">
-					<div class="divcontainer2">
-						<img class="menucircle" onclick="changeImage(event)">
-					</div>
-					<a>大一</a>
+				<div id="previous" >
+					<img class="arrow" src="resources/images/arrow.png" onclick="toPrevious()">
 				</div>
 				<div class="divcontainer">
 					<div class="divcontainer2">
@@ -29,9 +25,17 @@
 						<img class="menucircle" onclick="changeImage(event)">
 					</div>
 					<a>大一</a>
+				</div>
+				<div class="divcontainer">
+					<div class="divcontainer2">
+						<img class="menucircle" onclick="changeImage(event)">
+					</div>
+					<a>大一</a>
+				</div>
+				<div id="next" >
+					<img class="arrow" src="resources/images/arrow.png" onclick="toNext()">
 				</div>
 			</div>
-			<div id="next" onclick="toNext()">&gt;</div>
 		</div>
 		<div id="divimages">
 			<img id='img1'  class="circle" src="resources/images/107ver1.png" alt="A circle and a line" front="resources/images/107ver1.png" back = "resources/images/One.png" draggable='false'  onmousemove="mousemove(event)" onmousedown="mousedown(event)" onmouseup="mouseup(event)" ontouchmove="touchmove(event)" ontouchstart="touchstart(event)" ontouchend="touchend(event)" currentdegree='0'>

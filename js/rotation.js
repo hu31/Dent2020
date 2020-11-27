@@ -262,13 +262,13 @@ function changeMenu (index) {
 	divcontainer = obj.children;
 	var count = divcontainer.length;
 	console.log ("count" + count);
-	if (count < 1) {
+	if (count < 3) {
 		return;
 	}
 
 	g_index = index;
 	var i = 0;
-	for (i=0; i<count; i++, index++) {
+	for (i=1; i<count-1; i++, index++) {
 		console.log(i + "," + index % discs.length);
 		setDisc(divcontainer[i], discs[index % discs.length]);
 	}
