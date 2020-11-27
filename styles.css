@@ -230,4 +230,10 @@ button {
 		height: 100%;
 		width: 100%;
 	}
+
+	button {
+		position: absolute;
+		bottom: 1px;
+		right: 0px;
+	}
 }
