@@ -45,6 +45,11 @@ function touchend(event) {
 }
 
 function mousedown(event) {
+	if (event.detail > 1) {
+		event.preventDefault();
+		return false;
+	}
+
 	var id = event.target.id;
 	//document.getElementById(id).setAttribute("enterX", event.offsetX);
 	//document.getElementById(id).setAttribute("enterY", event.offsetY);
