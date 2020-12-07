@@ -4,6 +4,7 @@ var mobileDegree = 0;
 var isTouched = 0;
 var isFront = true;
 var g_index = 0;
+var selected_index = 0;
 
 var discs = [
 	{"name":"大一", "front":"resources/images/One_Front.png", "back":"resources/images/One.png"},
@@ -238,7 +239,7 @@ function flip (event) {
 	changeMenu(g_index);
 }
 
-function setDisc(container, content) {
+function setDisc(container, content, isHighlight) {
 	var name = content["name"];
 	var front = content["front"];
 	var back = content["back"];
@@ -255,6 +256,13 @@ function setDisc(container, content) {
 	}
 	imgobj.setAttribute("front", front);
 	imgobj.setAttribute("back", back);
+	if (isHighlight) {
+		//imgobj.setAttribute("opacity", "1.0");
+		imgobj.style.opacity = 1.0;
+	} else {
+		//imgobj.setAttribute("opacity", "0.5");
+		imgobj.style.opacity = 0.5;
+	}
 }
 
 function changeMenu (index) {
@@ -270,14 +278,20 @@ function changeMenu (index) {
 	var i = 0;
 	for (i=1; i<count-1; i++, index++) {
 		console.log(i + "," + index % discs.length);
-		setDisc(divcontainer[i], discs[index % discs.length]);
+		setDisc(divcontainer[i], discs[index % discs.length], selected_index == index % discs.length);
 	}
 }
 
 function toNext() {
+	if (g_index >= discs.legnth) {
+		g_index = g_index % discs.length;
+	}
 	changeMenu(g_index + 1);
 }
 
 function toPrevious() {
+	if (g_index == 0) {
+		g_index  = g_index + discs.length;
+	}
 	changeMenu(g_index - 1);
 }
