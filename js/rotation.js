@@ -173,6 +173,12 @@ function touchmove(event) {
 	if (degree < 1 && degree > -1) {
 		return false;
 	}
+	if (degree > 10) {
+		degree = 10;
+	}
+	if (degree < -10) {
+		degree = -10;
+	}
 	degree = (mobileDegree + degree) % 360;
 	
 	rotate("img1", degree);
