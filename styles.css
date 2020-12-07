@@ -11,7 +11,7 @@ html {
 }
 
 body {
-	background-color: #90CAD2;
+	background-color: #0C1618;
 	overflow: hidden;
 	height: 100%;
 	width: 100%;
@@ -71,6 +71,7 @@ p {
 }
 
 a {
+	color: #90CAD2;
 	position: relative;
 	text-align: center;
 	height: 25%;
@@ -97,12 +98,12 @@ a {
 	object-fit: contain;
 	height: 90%;
 	width: 90%;
-	opacity: 0.5;
-}
-
-.divcontainer2 img:hover {
 	opacity: 1;
 }
+
+/*.divcontainer2 img:hover {
+	opacity: 1;
+}*/
 
 #previous, #next {
 	width: 10%;

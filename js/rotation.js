@@ -256,6 +256,7 @@ function setDisc(container, content, isHighlight) {
 	}
 	imgobj.setAttribute("front", front);
 	imgobj.setAttribute("back", back);
+/*
 	if (isHighlight) {
 		//imgobj.setAttribute("opacity", "1.0");
 		imgobj.style.opacity = 1.0;
@@ -263,6 +264,7 @@ function setDisc(container, content, isHighlight) {
 		//imgobj.setAttribute("opacity", "0.5");
 		imgobj.style.opacity = 0.5;
 	}
+*/
 }
 
 function changeMenu (index) {
