@@ -245,11 +245,11 @@ function flip (event) {
 	var obj = document.getElementById("img1");
 	var obj2 = document.getElementById("img3");
 	if (isFront) {
-		obj.src = obj.getAttribute("front");
 		obj2.src = obj2.getAttribute("front");
+		obj.src = obj.getAttribute("front");
 	} else {
-		obj.src = obj.getAttribute("back");
 		obj2.src = obj2.getAttribute("back");
+		obj.src = obj.getAttribute("back");
 	}
 	changeMenu(g_index);
 }
