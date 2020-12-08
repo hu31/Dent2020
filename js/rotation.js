@@ -5,6 +5,7 @@ var isTouched = 0;
 var isFront = true;
 var g_index = 0;
 var selected_index = 0;
+var momentum = 0;
 
 var discs = [
 	{"name":"大一", "front":"resources/images/One_Front.png", "back":"resources/images/One.png"},
@@ -38,9 +39,11 @@ function mouseup(event) {
 	//document.getElementById(id).removeAttribute("enterX");
 	//document.getElementById(id).removeAttribute("enterY");
 	isTouched = 0;
+	momentum = 0;
 }
 
 function touchend(event) {
+	momentum = 0;
 	isTouched = 0;
 }
 
@@ -50,6 +53,7 @@ function mousedown(event) {
 		return false;
 	}
 
+	momentum = 0;
 	var id = event.target.id;
 	//document.getElementById(id).setAttribute("enterX", event.offsetX);
 	//document.getElementById(id).setAttribute("enterY", event.offsetY);
@@ -62,6 +66,7 @@ function touchstart(event) {
 	isTouched = 1;
 	mobileX = event.changedTouches[0].pageX;
 	mobileY = event.changedTouches[0].pageY;
+	momentum = 0;
 }
 
 function rotate(id, degree) {
@@ -92,11 +97,11 @@ function move(id, X, Y) {
 	//var tempX = document.getElementById(id).getAttribute("enterX");
 	//var tempY = document.getElementById(id).getAttribute("enterY");
 
-	console.log("offset: " + obj.offsetTop + ", " + obj.offsetLeft);
+	//console.log("offset: " + obj.offsetTop + ", " + obj.offsetLeft);
 
 	if (!isTouched) {
 		return false;
-	}
+	} 
 
 	var enterX = mobileX;
 	var enterY = mobileY;
@@ -130,13 +135,18 @@ function move(id, X, Y) {
 	}
 	//Only rotate with suffcient degrees
 	if (degree < 1 && degree > -1) {
-		return false;
+		//return false;
 	}
 	if (degree > 10) {
 		degree = 10;
 	}
 	if (degree < -10) {
 		degree = -10;
+	}
+	if (degree * momentum <= 0) {
+		console.log("building momentum! " + degree);
+		momentum = degree;
+		//return false;
 	}
 	console.log("degree: " + degree);
 	degree = (currentDegree + degree) % 360;
@@ -211,9 +221,12 @@ function loadContent() {
 
 function loadBody() {
 	changeMenu(0);
-	for (i in discs) {
-		new Image().src = i["front"];
-		new Image().src = i["back"];
+	var i = 0;
+	for (i = 0; i < discs.length; i++) {
+		console.log(discs[i]["front"]);
+		console.log(discs[i]["back"]);
+		new Image().src = discs[i]["front"];
+		new Image().src = discs[i]["back"];
 	}
 }
 
