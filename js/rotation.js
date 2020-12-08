@@ -210,11 +210,11 @@ function loadContent() {
 }
 
 function loadBody() {
+	changeMenu(0);
 	for (i in discs) {
 		new Image().src = i["front"];
 		new Image().src = i["back"];
 	}
-	changeMenu(0);
 }
 
 function changeImage(event) {

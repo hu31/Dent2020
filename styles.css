@@ -221,7 +221,7 @@ button {
 		width: 100%;
 		position: absolute;
 		top: 0px;
-		margin: 5px 5px 5px 5px
+		margin: 5px 5px 5px 5px;
 	}
 
 	#menu3 {
@@ -241,5 +241,95 @@ button {
 		position: absolute;
 		bottom: 1px;
 		right: 0px;
+	}
+}
+
+@media (orientation: landscape) and (max-height: 600px) {
+	html {
+		height: 100%;
+	}
+
+	body {
+		height: 90%;
+		bottom: 0px;
+	}
+
+	#header {
+		height: 10%;
+		visibility: hidden;
+		display: none;
+	}
+
+	#menu img {
+		top: 1%;
+		bottom: 1%;
+		height: 90%;
+		z-index: 2;
+	}
+
+	#menu2 {
+		position: absolute;
+		margin: 5px 5px 5px 5px;
+		height: 100%;
+		width: 15%;
+		top: auto;
+		left: 0px;
+		display: block;
+	}
+
+	#menu3 {
+		width: 100%;
+		height: 100%;
+		display: block;
+	}
+
+	#previous, #next {
+		width: 100%;
+		height: 10%;
+	}
+
+	.divcontainer {
+		width: 100%;
+		display: block;
+		height: 25%;
+	}
+	
+	.divcontainer2 img {
+		height: 100%;
+		width: 100%;
+	}
+
+	#previous img {
+		transform:rotate(90deg);
+		object-fit: contain;
+	}
+
+	#next img {
+		transform:rotate(90deg);
+		object-fit: contain;
+	}
+
+	#divimages {
+		position: absolute;
+		bottom: 0px;
+		height: 100%;
+		width: 80%;
+		right: 3%;
+	}
+
+	#buttondiv {
+		height: 5%;
+		position: absolute;
+		bottom: 3px;
+	}
+
+	button {
+		position: absolute;
+		bottom: 1px;
+		right: 0px;
+	}
+
+	a {
+		display: block;
 	}
 }
