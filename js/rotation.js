@@ -4,7 +4,6 @@ var mobileDegree = 0;
 var isTouched = 0;
 var isFront = true;
 var g_index = 0;
-var selected_index = 0;
 var momentum = 0;
 
 var discs = [
@@ -251,6 +250,7 @@ function changeImage(event) {
 	//mobileX = 0;
 	//mobileY = 0;
 	//rotate("img1", 0);
+	changeMenu(g_index);
 }
 
 function flip (event) {
