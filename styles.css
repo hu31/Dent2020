@@ -99,6 +99,11 @@ a {
 	height: 90%;
 	width: 90%;
 	opacity: 1;
+	margin: auto;
+}
+
+.focus {
+	background-image: radial-gradient(circle, yellow, orange, orange, #0c1618, #0c1618);
 }
 
 /*.divcontainer2 img:hover {

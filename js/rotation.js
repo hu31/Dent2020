@@ -267,7 +267,7 @@ function flip (event) {
 	changeMenu(g_index);
 }
 
-function setDisc(container, content, isHighlight) {
+function setDisc(container, content) {
 	var name = content["name"];
 	var front = content["front"];
 	var back = content["back"];
@@ -284,15 +284,12 @@ function setDisc(container, content, isHighlight) {
 	}
 	imgobj.setAttribute("front", front);
 	imgobj.setAttribute("back", back);
-/*
-	if (isHighlight) {
-		//imgobj.setAttribute("opacity", "1.0");
-		imgobj.style.opacity = 1.0;
+
+	if (front==document.getElementById("img1").getAttribute("front")) {
+		imgobj.classList.add("focus");
 	} else {
-		//imgobj.setAttribute("opacity", "0.5");
-		imgobj.style.opacity = 0.5;
+		imgobj.classList.remove("focus");
 	}
-*/
 }
 
 function changeMenu (index) {
@@ -308,7 +305,7 @@ function changeMenu (index) {
 	var i = 0;
 	for (i=1; i<count-1; i++, index++) {
 		console.log(i + "," + index % discs.length);
-		setDisc(divcontainer[i], discs[index % discs.length], selected_index == index % discs.length);
+		setDisc(divcontainer[i], discs[index % discs.length]);
 	}
 }
 
