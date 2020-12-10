@@ -7,13 +7,13 @@ var g_index = 0;
 var momentum = 0;
 
 var discs = [
-	{"name":"大一", "front":"https://drive.google.com/uc?export=view&id=1ClpxcaN4aaooBVY4sYLmRDAHOTGlOsfy", "back":"resources/images/One.png"},
-	{"name":"大二", "front":"https://drive.google.com/uc?export=view&id=1eweITWZFnXZYg1isoFksKtsJru0Feqqy", "back":"resources/images/Two.png"},
-	{"name":"大三舞", "front":"https://drive.google.com/uc?export=view&id=1sWXzzMe2OMEwCoHRntB5PsoS78Z1RBrO", "back":"resources/images/ThreeDance.png"},
-	{"name":"大三樂", "front":"resources/images/ThreeMusic_Front.png", "back":"resources/images/ThreeMusic.png"},
-	{"name":"大三劇", "front":"resources/images/ThreeDrama_Front.png", "back":"resources/images/ThreeDrama.png"},
-	{"name":"大四", "front":"resources/images/Four_Front.png", "back":"resources/images/Four.png"},
-	{"name":"大五", "front":"resources/images/Five_Front.png", "back":"resources/images/Five.png"}
+	{"name":"大一", "front":"https://drive.google.com/uc?export=view&id=1ClpxcaN4aaooBVY4sYLmRDAHOTGlOsfy", "back":"https://drive.google.com/uc?export=view&id=1ugONM2cTgcjiExohsclKzmbNEq1G09I6"},
+	{"name":"大二", "front":"https://drive.google.com/uc?export=view&id=1eweITWZFnXZYg1isoFksKtsJru0Feqqy", "back":"https://drive.google.com/uc?export=view&id=1RQwtWAynge0gO-xdGHd09AScxw-_gu6D"},
+	{"name":"大三舞", "front":"https://drive.google.com/uc?export=view&id=1sWXzzMe2OMEwCoHRntB5PsoS78Z1RBrO", "back":"https://drive.google.com/uc?export=view&id=1RWJYe1AxZKICYQ4T4DQeSU6zmbGp_hdj"},
+	{"name":"大三樂", "front":"https://drive.google.com/uc?export=view&id=1dgkW0QluQ4bHgaXJMRd9521koXxsHEoS", "back":"https://drive.google.com/uc?export=view&id=1eaonEFmwoIV_fyhW86EnGNsIEC4oX_yi"},
+	{"name":"大三劇", "front":"https://drive.google.com/uc?export=view&id=1UQai0t9EGj91B61WerAasRYwVCHr9iKo", "back":"https://drive.google.com/uc?export=view&id=1Z1hq6Svs6MIlMWolbaWTLhScLnoYORzs"},
+	{"name":"大四", "front":"https://drive.google.com/uc?export=view&id=14Oi4b7fhgbJvflvrOkBpqVlGMGn269rb", "back":"https://drive.google.com/uc?export=view&id=1Gsaedb5iwWzyBzCDKBXaEOihmnr2F99d"},
+	{"name":"大五", "front":"https://drive.google.com/uc?export=view&id=1tBpKr9D9Roo-X4VycnBbtXT8PCNjVuRE", "back":"https://drive.google.com/uc?export=view&id=19_CMwBQHn7KPf9XDsOe_OKakTFwDTaMd"}
 ];
 
 
@@ -231,7 +231,6 @@ function loadBody() {
 }
 
 function changeImage(event) {
-	//document.getElementById("img1").src="resources/images/107ver1trial.png";
 	console.log(event.target);
 	var dest;
 	if (isFront) {
