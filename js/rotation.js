@@ -16,12 +16,6 @@ var discs = [
 	{"name":"大五", "front":"resources/images/Five_Front.png", "back":"resources/images/Five.png"}
 ];
 
-document.getElementById("img1").src = discs[0]["front"];
-document.getElementById("img1").setAttribute("front", discs[0]["front"]);
-document.getElementById("img3").src = "https://drive.google.com/uc?export=view&id=154qa3n0qUSzZOL50-Sji6r0IZ8cfJWxc";
-document.getElementById("img3").setAttribute("front", "https://drive.google.com/uc?export=view&id=154qa3n0qUSzZOL50-Sji6r0IZ8cfJWxc");
-document.getElementById("previous").getElementsByTagName("img")[0].src = "https://drive.google.com/uc?export=view&id=1OwUx4dhyn86IUsTlzPrS9fCxsadY_NxQ";
-document.getElementById("next").getElementsByTagName("img")[0].src = "https://drive.google.com/uc?export=view&id=1OwUx4dhyn86IUsTlzPrS9fCxsadY_NxQ";
 
 window.oncontextmenu = function (event) {
 	event.preventDefault();
