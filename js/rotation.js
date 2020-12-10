@@ -222,6 +222,8 @@ function loadContent() {
 function loadBody() {
 	changeMenu(0);
 	var i = 0;
+	new Image().src = "resources/images/Front.png";
+	new Image().src = "resources/images/Back.png";
 	for (i = 0; i < discs.length; i++) {
 		console.log(discs[i]["front"]);
 		console.log(discs[i]["back"]);
