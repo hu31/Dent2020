@@ -7,14 +7,21 @@ var g_index = 0;
 var momentum = 0;
 
 var discs = [
-	{"name":"大一", "front":"resources/images/One_Front.png", "back":"resources/images/One.png"},
-	{"name":"大二", "front":"resources/images/Two_Front.png", "back":"resources/images/Two.png"},
-	{"name":"大三舞", "front":"resources/images/ThreeDance_Front.png", "back":"resources/images/ThreeDance.png"},
+	{"name":"大一", "front":"https://drive.google.com/uc?export=view&id=1ClpxcaN4aaooBVY4sYLmRDAHOTGlOsfy", "back":"resources/images/One.png"},
+	{"name":"大二", "front":"https://drive.google.com/uc?export=view&id=1eweITWZFnXZYg1isoFksKtsJru0Feqqy", "back":"resources/images/Two.png"},
+	{"name":"大三舞", "front":"https://drive.google.com/uc?export=view&id=1sWXzzMe2OMEwCoHRntB5PsoS78Z1RBrO", "back":"resources/images/ThreeDance.png"},
 	{"name":"大三樂", "front":"resources/images/ThreeMusic_Front.png", "back":"resources/images/ThreeMusic.png"},
 	{"name":"大三劇", "front":"resources/images/ThreeDrama_Front.png", "back":"resources/images/ThreeDrama.png"},
 	{"name":"大四", "front":"resources/images/Four_Front.png", "back":"resources/images/Four.png"},
 	{"name":"大五", "front":"resources/images/Five_Front.png", "back":"resources/images/Five.png"}
 ];
+
+document.getElementById("img1").src = discs[0]["front"];
+document.getElementById("img1").setAttribute("front", discs[0]["front"]);
+document.getElementById("img3").src = "https://drive.google.com/uc?export=view&id=154qa3n0qUSzZOL50-Sji6r0IZ8cfJWxc";
+document.getElementById("img3").setAttribute("front", "https://drive.google.com/uc?export=view&id=154qa3n0qUSzZOL50-Sji6r0IZ8cfJWxc");
+document.getElementById("previous").getElementsByTagName("img")[0].src = "https://drive.google.com/uc?export=view&id=1OwUx4dhyn86IUsTlzPrS9fCxsadY_NxQ";
+document.getElementById("next").getElementsByTagName("img")[0].src = "https://drive.google.com/uc?export=view&id=1OwUx4dhyn86IUsTlzPrS9fCxsadY_NxQ";
 
 window.oncontextmenu = function (event) {
 	event.preventDefault();
